@@ -1,0 +1,22 @@
+h1{
+    font-size:50px;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    padding: 20px;
+    border: 2px red solid;
+    box-sizing: border-box;
+}
+
+body{
+    width: 50%;
+    margin: auto;
+   /* margin auto makes center adn mks it s othe img doest go past text??? */
+}
+
+main{
+    background-color: rgb(190,227,221);
+    width:50%;
+}
