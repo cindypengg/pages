@@ -1,0 +1,90 @@
+/* Animations */
+
+
+@keyframes logo-rotation{
+    0%{
+        transform: rotate(0deg);
+        background-color: pink;
+    }
+    50%{
+        background-color:blue;
+    }
+    100% {
+        transform: rotate(360deg);
+        background-color:green;
+    }
+}
+
+/* fonts */
+@font-face {
+    font-family: "sprat";
+    src: url("fonts/Sprat-Black.woff2") format("woff2");
+    font-weight: 400;
+    /* weights go from 400 -900 */
+    font-style: normal;
+}
+
+h1,h2{
+    font-family: "sprat";
+    font-size:50px;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    padding: 20px;
+    border: 2px red solid;
+    box-sizing: border-box;
+    animation: logo-rotation 2s ease 2s infinite alternate;
+}
+
+body{
+    width: 80%;
+    /* margin: auto; */
+    margin: 30px;
+   /* margin auto makes center adn mks it s othe img doest go past text??? */
+}
+
+main{
+    background-color: rgb(190,227,221);
+    width:50%;
+}
+.highlighted{
+    background-color: yellow;
+}
+
+h3+p, h4+p{
+        text-indent: 20px;
+}
+
+nav{
+    box-sizing:border-box;
+}
+
+nav a{
+     color:rgb(255, 4, 4);
+    transition: all 1s ease-in;
+}
+
+nav a:hover{
+    background-color:rgb(221, 185, 255)
+}
+
+.box{
+    background-color: rgb(146, 60, 60);
+    transition: background-color 1s ease;
+    /* animation: colors 2s linear infinite; */
+}
+
+.box:hover{
+    background-color: red;
+}
+
+#logo{
+    font-size: 30px;
+    padding: 20px;
+     /* inline block makes the contianer only aroudn the logo instead of extending up  */
+    display: inline-block;
+    animation: logo-rotation 2s ease 2s infinite alternate;
+    /* alternate is transtition from end of animation to beginning -  */
+}

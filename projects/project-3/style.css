@@ -1,0 +1,116 @@
+@keyframes tooltip-appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes enlarge {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+@keyframes hovering{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform:translateY(25px)
+    }
+}
+@keyframes hovering-more{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform:translateY(-20px)
+    }
+}
+
+@keyframes color-change{
+    0%{
+        background-color: brown;
+    }
+    25%{
+        background-color: lightblue;
+    }
+    50%{
+        background-color: green;
+    }
+    100%{
+        background-color: pink;
+    }
+}
+
+
+a{
+    text-decoration: none;
+    color:inherit;
+    font:inherit;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 2%;
+    animation: color-change 10s ease infinite alternate-reverse;
+
+}
+
+body{
+    padding: 20px;
+    background-color: aquamarine;
+    animation: color-change 10s ease infinite alternate;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.flex-container{
+    display:flex;
+    flex-wrap: wrap;
+     flex-direction: row; 
+     padding: 20px;
+
+}
+
+.satellite{
+    background-color: rgba(194, 192, 137, 0.009);
+    padding: 20px;
+    color: white;
+}
+
+.satellite:hover{
+    animation: enlarge 1s ease forwards alternate;
+    animation: hovering 1s ease infinite alternate;
+    
+}
+
+.tooltip{
+    position: relative; 
+    display:inline-block;
+    cursor: pointer;
+    animation: hovering-more 2s ease infinite alternate;
+}
+
+.tooltip .tooltiptext{
+    opacity: 0;  
+    color:white;
+    background-color: rgba(124, 157, 157, 0.338);
+    text-align:center;
+    padding: 10px;
+    position:absolute;
+    left:120px;
+ 
+  
+
+}
+
+.tooltip:hover .tooltiptext{
+    visibility:visible;
+    opacity:1;
+    animation: tooltip-appear .5s alternate;
+}
