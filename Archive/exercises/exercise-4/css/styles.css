@@ -1,0 +1,269 @@
+:root{
+  --bg-main:white;
+  --text-main:black;
+  --bg-side:pink;
+  --text-side:purple;
+
+}
+:root.dark{
+  --bg-main:black;
+  --text-main:gray;
+  --bg-side:blue;
+  --text-side:green;
+}
+
+/* ACTUALLY APPLY THIS t oelements for it to work */
+/* 
+------------------------------------
+Fonts
+------------------------------------
+*/
+
+@font-face {
+  font-family: 'Absans';
+  src: url('../fonts/Absans-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Sprat';
+  src: url('../fonts/Sprat-Regular.woff2') format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Sprat';
+  src: url('../fonts/Sprat-Bold.woff2') format('woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'SpratVF';
+  src: url('../fonts/SpratVF.woff2') format('woff2-variations');
+}
+
+/* 
+------------------------------------
+Animations
+------------------------------------
+*/
+
+@keyframes fading {
+  0% {
+    color: rgb(11, 79, 18);
+  }
+  100% {
+    color: rgb(94, 175, 62);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* 
+------------------------------------
+Base container styles
+------------------------------------
+*/
+/* //variables, looks for the parent of all elements. can set this up in any container.. then can replace the colors with the varialbe name  
+you can apply nav text to borders too, this is just a variable name. With this, easy to play around in the inspector to prototype  */
+
+:root{
+  --main-text: #0d5312;
+  --main-background: hsl(70, 20%, 88%); 
+  --nav-text: ;
+  --nav-background: rgb(215, 210, 228);
+  
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: hsl(70, 20%, 88%); replacing with variable*/
+  background-color: var(--main-background);
+  font-family: "Merriweather", serif;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding: 2rem;
+  max-width: 60rem;
+  width: calc(100% - 300px);
+  margin-left: 300px;
+}
+
+nav {
+  /* background-color: rgb(215, 210, 228); */
+  background-color: var(--nav-background);
+  border-right: 1px solid #032805;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* medium screen media query */
+@media screen and (min-width:600px){
+  body{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  main{
+    grid-column: 1/2;
+    order: 1;
+  }
+
+  nav{
+    grid-column:1/2;
+    order: 2;
+  }
+}
+
+/* Large screen media query */
+  @media screen and (min-width:1000px){
+    body{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    main{
+      grid-column: 2/4;
+    }
+    nav{
+      grid-column:1/2;
+    }
+  } 
+
+
+/* 
+------------------------------------
+Base type styles
+------------------------------------
+*/
+
+h1 {
+  font-family: monospace;
+  color: #032805;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-family: 'Absans', Verdana, sans-serif;
+  font-size: 1.5rem;
+  /* color: #0d5312; */
+  color:var(--main-text);
+}
+
+h3 {
+  margin-top: 50px;
+  font-family: 'Sprat', Verdana, sans-serif;
+  font-weight: bold;
+  /* color: #032805; */
+  color:var(--main-text);
+  transition: all 0.5s ease;
+}
+
+h4 {
+  margin-top: 50px;
+  font-family: 'Sprat', Verdana, sans-serif;
+  /* color: #032805; */
+  color:var(--main-text);
+  transition: all 0.3s ease;
+}
+
+h3:target, h4:target {
+  /* transform: rotate(-2deg); */
+  /* filter: drop-shadow(2px 2px 4px green); */
+  animation: fading 1s alternate 0s infinite ease;
+}
+
+
+h3 + h4 {
+  margin-top: 0;
+}
+
+h3 + p {
+  text-indent: 20px;
+}
+
+p {
+  color: rgb(11, 79, 18);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  padding: 20px;
+
+  border: 1px solid rgb(11, 79, 18);
+
+  box-sizing: border-box;
+}
+
+figcaption {
+  font-family: 'Absans', Verdana, sans-serif;
+  font-size: 0.75rem;
+  color: rgb(11, 79, 18);
+  text-align: right;
+}
+
+/* 
+------------------------------------
+Navigation styles
+------------------------------------
+*/
+
+nav {
+
+  #logo {
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    font-size: 2rem;
+    animation: rotating 1s 0s infinite ease;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    ol {
+      padding-left: 20px;
+    }
+  }
+
+  li {
+
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(80, 30, 168);
+    margin-bottom: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    font-family: 'SpratVF', serif;
+    font-stretch: 100%;
+    font-weight: 100;
+    color: rgb(80, 30, 168);
+    transition: all 0.5s ease;
+  }
+
+  a:hover {
+    font-weight: 600;
+  }
+}

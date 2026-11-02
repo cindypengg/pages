@@ -1,0 +1,56 @@
+/* ==========================================================
+   gallery.css – home page grid
+   Two works per row, every thumbnail cropped to 16:9.
+   Captions sit below the art, not on top of it.
+   ========================================================== */
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;          /* one per row on small phones */
+  gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2rem);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+}
+
+@media (min-width: 560px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  display: block;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;                   /* crops to fill the 16:9 frame */
+  object-position: center;             /* change per image if needed, e.g. style="object-position: top" */
+  background: var(--line);             /* placeholder tone while loading */
+}
+
+.card-title {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.card-meta {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* Underline the title on hover/focus as a clear "this is a link" cue,
+   even if the GIF is slow to load. */
+.card:hover .card-title,
+.card:focus-visible .card-title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}

@@ -1,29 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name – Artist</title>
+  <meta name="description" content="Paintings and illustrations by Your Name. Hover over a piece to watch it come together, click to see the full process.">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="icon" href="assets/images/icons/favicon.png">
 </head>
-<style>
-    .highlighted{
-        background-color: yellow;
-    }
-</style>
-
 <body>
-    <main>
-        <h1>Hello World!</h1>
-        <a href="exercises/index.html">Exercises</a>
-        <a href="projects/index.html">Projects</a>
-        
+  <a class="skip-link" href="#work">Skip to work</a>
 
-        <!--<a href = "link">the link title</a> -->
-        <!--don't close the <a> carrot before the link-->
-        
-    </main>
+  <header class="site-header">
+    <h1><img src="projects/logo.png" alt="Cindy Peng"></h1>
+    <nav aria-label="Main">
+      <a href="index.html" aria-current="page">Animation</a>
+      <a href="games.html" >Games</a>
+      <a href="games.html" >Playground</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+  </header>
+
+  <main id="work">
+    <h1 class="visually-hidden">Selected work</h1>
+
+    <ul class="gallery">
+      <!--
+        Copy one <li> per piece.
+        - src       = still image shown by default (cover)
+        - data-gif  = animation that plays on hover
+        - width/height = real pixel size of the still, so the page doesn't jump while loading
+      -->
+        <li class="gallery-item">
+        <a class="card" href="projects/maybe-the-road.html">
+          <img src="assets/images/covers/maybe-the-road.jpg"
+               data-gif="assets/images/covers/maybe-the-road.gif"
+               width="1600" height="900"
+               alt="Maybe The Road, 2025">
+          <span class="card-title">Maybe The Road</span>
+          <span class="card-meta">Oil on canvas, 2025</span>
+        </a>
+      </li>
+      
+      <li class="gallery-item">
+        <a class="card" href="projects/maybe-the-road.html">
+          <img src="assets/images/covers/maybe-the-road.jpg"
+               data-gif="assets/images/covers/maybe-the-road.gif"
+               width="1600" height="900"
+               alt="LALA, 2025">
+          <span class="card-title">Maybe The Road</span>
+          <span class="card-meta">Oil on canvas, 2025</span>
+        </a>
+      </li>
+
+      <li class="gallery-item">
+        <a class="card" href="projects/night-market.html">
+          <img src="assets/images/covers/night-market.jpg"
+               data-gif="assets/images/covers/night-market.gif"
+               width="1600" height="900"
+               alt="Night Market, digital illustration">
+          <span class="card-title">Night Market</span>
+          <span class="card-meta">Digital, 2025</span>
+        </a>
+      </li>
+
+      <li class="gallery-item">
+        <a class="card" href="projects/harbour-light.html">
+          <img src="assets/images/covers/harbour-light.jpg"
+               data-gif="assets/images/covers/harbour-light.gif"
+               width="1600" height="900"
+               alt="Harbour Light, watercolour">
+          <span class="card-title">Harbour Light</span>
+          <span class="card-meta">Watercolour, 2024</span>
+        </a>
+      </li>
+
+      <li class="gallery-item">
+        <a class="card" href="projects/field-notes.html">
+          <img src="assets/images/covers/field-notes.jpg"
+               data-gif="assets/images/covers/field-notes.gif"
+               width="1600" height="900"
+               alt="Field Notes, ink and gouache">
+          <span class="card-title">Field Notes</span>
+          <span class="card-meta">Ink and gouache, 2024</span>
+        </a>
+      </li>
+
+      <li class="gallery-item">
+        <a class="card" href="projects/second-skin.html">
+          <img src="assets/images/covers/second-skin.jpg"
+               data-gif="assets/images/covers/second-skin.gif"
+               width="1600" height="900"
+               alt="Second Skin, acrylic on panel">
+          <span class="card-title">Second Skin</span>
+          <span class="card-meta">Acrylic on panel, 2023</span>
+        </a>
+      </li>
+
+      <li class="gallery-item">
+        <a class="card" href="projects/low-tide.html">
+          <img src="assets/images/covers/low-tide.jpg"
+               data-gif="assets/images/covers/low-tide.gif"
+               width="1600" height="900"
+               alt="Low Tide, charcoal on paper">
+          <span class="card-title">Low Tide</span>
+          <span class="card-meta">Charcoal, 2023</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Your Name</p>
+    <p>
+      <a href="mailto:you@example.com">you@example.com</a>
+      <a href="https://instagram.com/yourhandle" rel="noopener">Instagram</a>
+    </p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
-
 </html>

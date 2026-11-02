@@ -1,0 +1,125 @@
+/* ==========================================================
+   main.css – shared across every page
+   Neutral gallery-wall palette so the artwork supplies the colour.
+   ========================================================== */
+
+:root {
+  --wall: #e8e9eb;       /* page background */
+  --ink: #1c1d20;        /* text */
+  --ink-soft: #62656c;   /* secondary text */
+  --line: #cfd1d5;       /* dividers */
+  --focus: #2f3fbf;      /* keyboard focus ring */
+
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --page-pad: clamp(1.25rem, 4vw, 3rem);
+  --max-width: 1500px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+
+ul { margin: 0; padding: 0; list-style: none; }
+
+/* ---------- Accessibility helpers ---------- */
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--page-pad);
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--ink);
+  color: var(--wall);
+  z-index: 100;
+}
+.skip-link:focus { top: 0.75rem; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.75rem var(--page-pad) 1.25rem;
+}
+
+.site-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.site-header nav a {
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+  padding: 1.5rem var(--page-pad) 2.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+.site-footer p { margin: 0; }
+.site-footer a { margin-left: 1.25rem; }
+.site-footer a:first-child { margin-left: 0; }
+.site-footer a:hover { color: var(--ink); text-decoration: underline; }
