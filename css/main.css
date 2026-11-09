@@ -3,6 +3,34 @@
    Neutral gallery-wall palette so the artwork supplies the colour.
    ========================================================== */
 
+/* ---------- Fonts (Lora, self-hosted) ----------
+   Paths are relative to this CSS file. This assumes:
+     /css/main.css
+     /fonts/Lora-Regular.woff  (and Medium, Bold)
+*/
+
+@font-face {
+  font-family: "Lora";
+  src: url("../fonts/Lora-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../fonts/Lora-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../fonts/Lora-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --wall: #e8e9eb;       /* page background */
   --ink: #1c1d20;        /* text */
@@ -10,8 +38,8 @@
   --line: #cfd1d5;       /* dividers */
   --focus: #2f3fbf;      /* keyboard focus ring */
 
-  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Lora", Georgia, "Times New Roman", serif;
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
 
   --page-pad: clamp(1.25rem, 4vw, 3rem);
   --max-width: 1500px;
@@ -28,8 +56,8 @@ body {
   background: var(--wall);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.0625rem;   /* Lora runs slightly small/tight, so nudged up */
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -73,26 +101,39 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .site-header {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
+  align-items:center;
+  justify-content: center;
   gap: 0.75rem 2rem;
   max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1.75rem var(--page-pad) 1.25rem;
+  margin: 5 auto;
+  padding: 1.75rem var(--page-pad) 2 rem;
+}
+
+/* Works for a text site name OR a logo image inside an h1/p */
+.site-header h1,
+.site-header .site-name {
+  margin: 4;
+  font-size: inherit;
+  line-height: 0;
 }
 
 .site-name {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(1.5rem, 3vw, 2.1rem);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;      /* negative tracking looks cramped in a serif */
   line-height: 1;
 }
 
+.site-header img { height: 5rem; width: auto; }
+
 .site-header nav {
   display: flex;
-  gap: 1.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  font-size: 0.95rem;
 }
 
 .site-header nav a {
