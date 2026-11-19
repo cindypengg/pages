@@ -32,7 +32,7 @@
 }
 
 :root {
-  --wall: #e8e9eb;       /* page background */
+  --wall: #dbdcfa;       /* page background */
   --ink: #1c1d20;        /* text */
   --ink-soft: #62656c;   /* secondary text */
   --line: #cfd1d5;       /* dividers */
@@ -59,6 +59,14 @@ body {
   font-size: 1.0625rem;   /* Lora runs slightly small/tight, so nudged up */
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  background: linear-gradient(120deg, #fbd5e5, #f7c6de, #e9d3fb, #fde0ea, #fbd5e5);   background-size: 300% 300%;
+  animation: drift 20s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 img, video { display: block; max-width: 100%; height: auto; }
@@ -102,12 +110,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .site-header {
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   align-items:center;
   justify-content: center;
   gap: 0.75rem 2rem;
   max-width: var(--max-width);
-  margin: 5 auto;
+  margin: 0 auto;
   padding: 1.75rem var(--page-pad) 2 rem;
 }
 
@@ -133,7 +142,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.75rem;
-  font-size: 0.95rem;
+  font-size: 1.75rem;
 }
 
 .site-header nav a {
@@ -164,3 +173,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .site-footer a { margin-left: 1.25rem; }
 .site-footer a:first-child { margin-left: 0; }
 .site-footer a:hover { color: var(--ink); text-decoration: underline; }
+
+main {
+  margin-top: 20px;
+}
